@@ -39,15 +39,19 @@ const char = {
 };
 
 // First Function is to translate it from text to Morse
-const fromLettersToMorse = textInput => textInput.toLowerCase().split("").map(mapLetter).join(" ");
+const fromLettersToMorse = textInput => {
+    textInput.toLowerCase().split("").map(mapLetter).join(" ");
+}
 
 //This is from morse to letters
-const fromMorseToLetters = morseInput => morseInput.split(" ").map(changeToWordsReverse).join("");
+const fromMorseToLetters = morseInput => {
+    morseInput.split(" ").map(changeToWordsReverse).join("");
+}
 
 
 const mapLetter = letter => char[letter];
 
-//This is a fuction when inputed by the user it returs the value key from the array e.g "u" will return "---,..."
+//This is a fuction when inputed by the user it returs the value key from the array e.g "u" will return "..-"
 
 const changeToWordsReverse = inputFromUser => {
     return Object.keys(char).find(key => char[key] === inputFromUser);
